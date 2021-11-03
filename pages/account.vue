@@ -1,16 +1,37 @@
 <template>
-  <AccountPage />
+  <div>
+    <h1>Account</h1>
+    <p>Naam: {{ user.name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Telefoon: {{ user.phone }}</p>
+    <Button :handle-click="logoutUser">
+      Uitloggen
+    </Button>
+  </div>
 </template>
 
 <script>
-import AccountPage from '../components/AccountPage.vue'
+import { mapActions } from 'vuex'
+import Button from '~/components/Button.vue'
 export default {
   components: {
-    AccountPage
+    Button
   },
-  middleware ({ store, redirect }) {
-    if (!store.state.user.email) {
-      return redirect('/')
+  layout: 'Layout',
+  data () {
+    return {
+      user: {}
+    }
+  },
+  mounted () {
+    this.user = this.$store.getters.me
+  },
+  methods: {
+    ...mapActions({
+      logoutUser: 'logoutUser'
+    }),
+    submit () {
+      this.logoutUser()
     }
   }
 }
