@@ -1,15 +1,20 @@
-import createPersistedState from 'vuex-persistedstate'
-
 const authentication = {
   state: () => ({
     user: {}
   }),
   mutations: {
+    initialiseStore (state) {
+      if (localStorage.getItem('user')) {
+        state.user = JSON.parse(localStorage.getItem('user'))
+      }
+    },
     setUser (state, payload) {
       state.user = payload
+      localStorage.setItem('user', JSON.stringify(state.user))
     },
     logoutUser (state) {
       state.user = {}
+      localStorage.removeItem('user')
     }
   },
   actions: {
@@ -32,9 +37,10 @@ const authentication = {
     }
   },
   getters: {
-    me: state => state.user
-  },
-  plugins: [createPersistedState()]
+    me: (state) => {
+      return state.user
+    }
+  }
 }
 
 export default authentication

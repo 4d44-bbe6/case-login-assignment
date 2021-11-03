@@ -23,6 +23,9 @@ export default {
       user: {}
     }
   },
+  beforeCreate () {
+    this.$store.commit('authentication/initialiseStore')
+  },
   mounted () {
     this.user = this.$store.getters['authentication/me']
   },
