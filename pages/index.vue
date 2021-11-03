@@ -54,17 +54,16 @@ export default {
       errors: []
     }
   },
+
   mounted () {
-    this.user = this.$store.getters.me
+    this.user = this.$store.getters['authentication/me']
   },
   methods: {
-    ...mapActions({
-      login: 'setUser'
-    }),
+    ...mapActions('authentication', ['setUser']),
     async submit () {
       this.validateForm()
       if (this.errors.length === 0) {
-        const authenticated = await this.login(this.form)
+        const authenticated = await this.setUser(this.form)
         if (!authenticated) { this.errors.push('Logingegevens zijn incorrect.') }
       }
     },

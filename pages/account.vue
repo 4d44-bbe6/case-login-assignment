@@ -24,11 +24,11 @@ export default {
     }
   },
   mounted () {
-    this.user = this.$store.getters.me
+    this.user = this.$store.getters['authentication/me']
   },
   methods: {
     ...mapActions({
-      logoutUser: 'logoutUser'
+      logoutUser: 'authentication/logoutUser'
     }),
     submit () {
       this.logoutUser()
