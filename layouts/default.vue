@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <router-link to="/">
-      <img src="images/logo.png" alt="Logo 356Werk">
+      <img src="~/assets/images/logo.png" alt="Logo 356Werk">
     </router-link>
     <div class="container__content">
       <Nuxt />
