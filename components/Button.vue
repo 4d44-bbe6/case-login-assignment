@@ -5,15 +5,15 @@
 </template>
 
 <script>
-  export default {
-    name: 'Button',
-    props: {
-      handleClick: {
-        type: Function,
-        default: () => {}
-      }
+export default {
+  name: 'Button',
+  props: {
+    handleClick: {
+      type: Function,
+      default: () => {}
     }
   }
+}
 </script>
 
 <style lang="scss">

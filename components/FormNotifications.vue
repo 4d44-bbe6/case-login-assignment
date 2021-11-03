@@ -7,14 +7,14 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      notifications: {
-        type: Array,
-        default: () => []
-      }
+export default {
+  props: {
+    notifications: {
+      type: Array,
+      default: () => []
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,16 +1,16 @@
 <template>
   <div class="container">
-      <router-link to="/">
-        <img src="images/logo.png" alt="Logo 356Werk" />
-      </router-link>
-      <div class="container__content">
-        <Nuxt />
-      </div>
+    <router-link to="/">
+      <img src="images/logo.png" alt="Logo 356Werk">
+    </router-link>
+    <div class="container__content">
+      <Nuxt />
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-  .container {  
+  .container {
       width: 100%;
       max-width: 600px;
       margin: 20px auto;
