@@ -36,3 +36,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .title {
+    margin-bottom: 1rem;
+    color: $color__primary;
+    text-align: center;
+  }
+</style>

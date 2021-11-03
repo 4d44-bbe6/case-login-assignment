@@ -1,6 +1,10 @@
 <template>
-  <ul class="container">
-    <li v-for="(notification, index) in notifications" :key="index">
+  <ul class="notifications">
+    <li
+      v-for="(notification, index) in notifications"
+      :key="index"
+      class="notifications__item"
+    >
       {{ notification }}
     </li>
   </ul>
@@ -17,15 +21,19 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  .container {
+<style lang="scss" >
+  .notifications {
     margin-top: 2rem;
     padding: 2rem;
+
     border: 1px solid red;
     border-radius: 2px;
-    text-align: left;
-    li {
+
+    list-style: none;
+
+    &__item {
       width: 100%;
+
       color: red;
       font-weight: 500;
     }

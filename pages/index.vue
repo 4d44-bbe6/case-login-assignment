@@ -1,37 +1,31 @@
 <template>
-  <div>
-    <div>
-      <div v-if="user.email">
-        <p>
-          Je bent al ingelogged. <NuxtLink to="/account">
-            Klik hier om je accountpagina te openen.
-          </NuxtLink>
-        </p>
-      </div>
-      <div v-else>
-        <h1>Log in</h1>
-        <form @submit.prevent="submit">
-          <InputField v-model="form.email" name="email" label="E-mail" />
-          <InputField v-model="form.password" name="password" label="Wachtwoord" type="password" />
-          <p>
-            <NuxtLink to="#">
-              Wachtwoord vergeten
-            </NuxtLink>
-          </p>
-          <Button>
-            Inloggen
-          </Button>
-        </form>
-        <p>
-          Heb je nog geen account? <NuxtLink to="#">
-            Schrijf je dan in
-          </NuxtLink>
-        </p>
-        <div v-if="errors.length">
-          <FormNotifications :notifications="errors" />
-        </div>
-      </div>
-    </div>
+  <p v-if="user.email">
+    Je bent al ingelogged. <NuxtLink to="/account">
+      Klik hier om je accountpagina te openen.
+    </NuxtLink>
+  </p>
+  <div v-else>
+    <h1>
+      Log in
+    </h1>
+    <form @submit.prevent="submit">
+      <InputField v-model="form.email" name="email" label="E-mail" />
+      <InputField v-model="form.password" name="password" label="Wachtwoord" type="password" />
+      <p>
+        <NuxtLink to="#">
+          Wachtwoord vergeten
+        </NuxtLink>
+      </p>
+      <Button>
+        Inloggen
+      </Button>
+    </form>
+    <p>
+      Heb je nog geen account? <NuxtLink to="#">
+        Schrijf je dan in
+      </NuxtLink>
+    </p>
+    <FormNotifications v-if="errors.length" :notifications="errors" />
   </div>
 </template>
 

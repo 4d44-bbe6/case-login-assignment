@@ -1,7 +1,8 @@
 <template>
-  <div class="form__group">
-    <label :for="name">{{ label }}</label>
+  <div class="form">
+    <label class="form__label" :for="name">{{ label }}</label>
     <input
+      class="form__input"
       :name="name"
       :value="value"
       :type="type"
@@ -37,10 +38,18 @@ export default {
 </script>
 
 <style lang="scss">
-  .form__group {
-    input {
+  .form {
+    &__label {
+      display: block;
+      margin-top: 10px;
+
+      font-size: 1rem;
+    }
+
+    &__input {
       width: 100%;
       padding: 1rem;
+
       font-size: 1rem;
       line-height: 1;
       color: $color__primary;

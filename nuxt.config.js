@@ -22,7 +22,6 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/css/reset.css',
     '@/assets/css/global.scss'
   ],
 
@@ -49,6 +48,6 @@ export default {
   },
 
   styleResources: {
-    scss: ['./assets/css/*.scss']
+    scss: ['@/assets/css/*.scss']
   }
 }

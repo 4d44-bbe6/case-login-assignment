@@ -1,23 +1,22 @@
 /* Theme colors */
 $color__primary: #0e2542;
 
-a {
-  color: $color__primary;
+/* Global Styling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
 h1 {
   margin-bottom: 1rem;
-  
   color: $color__primary;
   text-align: center;
-}
-
-p {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-label {
-  display: block;
-  margin-top: 10px;
 }
