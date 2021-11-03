@@ -10,16 +10,18 @@
       </div>
       <div v-else>
         <h1>Log in</h1>
-        <InputField v-model="form.email" name="email" label="E-mail" />
-        <InputField v-model="form.password" name="password" label="Wachtwoord" type="password" />
-        <p>
-          <NuxtLink to="#">
-            Wachtwoord vergeten
-          </NuxtLink>
-        </p>
-        <Button :handle-click="submit">
-          Inloggen
-        </Button>
+        <form @submit.prevent="submit">
+          <InputField v-model="form.email" name="email" label="E-mail" />
+          <InputField v-model="form.password" name="password" label="Wachtwoord" type="password" />
+          <p>
+            <NuxtLink to="#">
+              Wachtwoord vergeten
+            </NuxtLink>
+          </p>
+          <Button>
+            Inloggen
+          </Button>
+        </form>
         <p>
           Heb je nog geen account? <NuxtLink to="#">
             Schrijf je dan in
